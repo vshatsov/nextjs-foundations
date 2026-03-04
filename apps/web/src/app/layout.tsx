@@ -9,13 +9,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className="container mx-auto px-4 py-8">
         {children}
+        {modal}
         {/* TODO: Convert to next/script (Section 4 Lesson 3) */}
         <script
           src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
@@ -31,6 +34,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <div id="modal-root" />
       </body>
     </html>
   );
